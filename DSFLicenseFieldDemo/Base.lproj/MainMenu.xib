@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -10,9 +11,13 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application" customClass="NSApplication"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="">
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="biggerLicenseKeyView" destination="5HS-0B-DDw" id="fA2-Sy-g4V"/>
+                <outlet property="fixedLicenseKey" destination="1ad-cb-Pa8" id="X2m-9W-o1d"/>
+                <outlet property="keyStack" destination="Jow-8D-Wcs" id="3Sh-B5-hOW"/>
+                <outlet property="readonlyKeyInGrid" destination="TLN-Kb-fLf" id="zjs-0o-tJc"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -678,15 +683,193 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="DSFLIcenceField" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="DSFLIcenceField" allowsToolTipsWhenApplicationIsInactive="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+            <rect key="contentRect" x="335" y="390" width="649" height="335"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <rect key="frame" x="0.0" y="0.0" width="649" height="335"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <customView placeholderIntrinsicWidth="297" placeholderIntrinsicHeight="25" translatesAutoresizingMaskIntoConstraints="NO" id="SWt-zg-S6Q" customClass="DSFMutableLicenseKeyControlView">
+                        <rect key="frame" x="20" y="290" width="297" height="25"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="segmentCount">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="segmentSize">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="name" value="Primary License Key"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderCharacter" value="*"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="showInvalidIndicator" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </customView>
+                    <customView placeholderIntrinsicWidth="144" placeholderIntrinsicHeight="25" translatesAutoresizingMaskIntoConstraints="NO" id="1ad-cb-Pa8" customClass="DSFLicenseKeyControlView">
+                        <rect key="frame" x="20" y="246" width="144" height="25"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="segmentCount">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="segmentSize">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="name" value="Secondary License Key"/>
+                        </userDefinedRuntimeAttributes>
+                    </customView>
+                    <box borderType="line" title="Dynamically created License Keys in a vertical stack view" translatesAutoresizingMaskIntoConstraints="NO" id="2cI-OY-1Le">
+                        <rect key="frame" x="17" y="69" width="324" height="158"/>
+                        <view key="contentView" id="BZM-QG-xqy">
+                            <rect key="frame" x="3" y="3" width="318" height="140"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <stackView distribution="equalSpacing" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="100" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jow-8D-Wcs">
+                                    <rect key="frame" x="20" y="20" width="278" height="100"/>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Jow-8D-Wcs" firstAttribute="top" secondItem="BZM-QG-xqy" secondAttribute="top" constant="20" id="GHz-F6-1Cs"/>
+                                <constraint firstItem="Jow-8D-Wcs" firstAttribute="leading" secondItem="BZM-QG-xqy" secondAttribute="leading" constant="20" id="Mca-Si-scR"/>
+                                <constraint firstAttribute="bottom" secondItem="Jow-8D-Wcs" secondAttribute="bottom" constant="20" id="c4a-Hj-ZfL"/>
+                                <constraint firstAttribute="trailing" secondItem="Jow-8D-Wcs" secondAttribute="trailing" constant="20" id="fqY-Zs-9qu"/>
+                            </constraints>
+                        </view>
+                    </box>
+                    <box borderType="line" title="Keys In Grid" translatesAutoresizingMaskIntoConstraints="NO" id="M7r-8M-gJR">
+                        <rect key="frame" x="343" y="82" width="278" height="145"/>
+                        <view key="contentView" id="bbz-Oj-Luu">
+                            <rect key="frame" x="3" y="3" width="272" height="127"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <gridView horizontalHuggingPriority="800" verticalHuggingPriority="800" horizontalCompressionResistancePriority="900" verticalCompressionResistancePriority="900" xPlacement="leading" yPlacement="bottom" rowAlignment="none" columnSpacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="eCd-et-WFi">
+                                    <rect key="frame" x="20" y="20" width="232" height="87"/>
+                                    <rows>
+                                        <gridRow yPlacement="center" height="25" id="VKJ-G9-7Ns"/>
+                                        <gridRow yPlacement="center" height="25" id="yDL-xQ-caq"/>
+                                        <gridRow yPlacement="center" height="25" id="hT4-d7-laK"/>
+                                    </rows>
+                                    <columns>
+                                        <gridColumn id="ccq-cz-mUq"/>
+                                        <gridColumn id="QVE-0r-01S"/>
+                                    </columns>
+                                    <gridCells>
+                                        <gridCell row="VKJ-G9-7Ns" column="ccq-cz-mUq" id="aWJ-xd-lOI">
+                                            <textField key="contentView" horizontalHuggingPriority="100" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GVu-v3-4L6">
+                                                <rect key="frame" x="-2" y="66" width="83" height="17"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Primary Key" id="2AK-e9-Unv">
+                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </gridCell>
+                                        <gridCell row="VKJ-G9-7Ns" column="QVE-0r-01S" id="pua-e1-nZ1">
+                                            <customView key="contentView" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K5L-cm-TMD" customClass="DSFMutableLicenseKeyControlView">
+                                                <rect key="frame" x="90" y="62" width="142" height="25"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="segmentCount">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="segmentSize">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderCharacter" value="#"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="name" value="Primary Key"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </customView>
+                                        </gridCell>
+                                        <gridCell row="yDL-xQ-caq" column="ccq-cz-mUq" id="sCF-k7-CCV">
+                                            <textField key="contentView" horizontalHuggingPriority="100" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g8F-Qf-KWC">
+                                                <rect key="frame" x="-2" y="35" width="83" height="17"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Upgrade Key" id="64N-8B-PJW">
+                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </gridCell>
+                                        <gridCell row="yDL-xQ-caq" column="QVE-0r-01S" id="8Yz-mv-3De">
+                                            <customView key="contentView" placeholderIntrinsicWidth="142" placeholderIntrinsicHeight="25" translatesAutoresizingMaskIntoConstraints="NO" id="IfD-iT-uuY" customClass="DSFMutableLicenseKeyControlView">
+                                                <rect key="frame" x="90" y="31" width="142" height="25"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="segmentCount">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="segmentSize">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="name" value="Upgrade Key"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </customView>
+                                        </gridCell>
+                                        <gridCell row="hT4-d7-laK" column="ccq-cz-mUq" id="r2H-55-Mhj">
+                                            <textField key="contentView" horizontalHuggingPriority="100" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cud-jM-NV9">
+                                                <rect key="frame" x="-2" y="4" width="83" height="17"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Read-only" id="bEo-1G-4mn">
+                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </gridCell>
+                                        <gridCell row="hT4-d7-laK" column="QVE-0r-01S" id="Sbb-6b-6Cv">
+                                            <customView key="contentView" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-Kb-fLf" customClass="DSFLicenseKeyControlView">
+                                                <rect key="frame" x="90" y="0.0" width="142" height="25"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="segmentCount">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="segmentSize">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderCharacter" value="*"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="name" value="Read-Only Key"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </customView>
+                                        </gridCell>
+                                    </gridCells>
+                                </gridView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="eCd-et-WFi" firstAttribute="leading" secondItem="bbz-Oj-Luu" secondAttribute="leading" constant="20" id="5gs-Gh-09P"/>
+                                <constraint firstAttribute="bottom" secondItem="eCd-et-WFi" secondAttribute="bottom" constant="20" id="Dpf-2l-r2s"/>
+                                <constraint firstItem="eCd-et-WFi" firstAttribute="top" secondItem="bbz-Oj-Luu" secondAttribute="top" constant="20" id="NOV-K4-dKU"/>
+                                <constraint firstAttribute="trailing" secondItem="eCd-et-WFi" secondAttribute="trailing" constant="20" id="rZ1-8U-O1W"/>
+                            </constraints>
+                        </view>
+                    </box>
+                    <customView placeholderIntrinsicWidth="297" placeholderIntrinsicHeight="25" translatesAutoresizingMaskIntoConstraints="NO" id="5HS-0B-DDw" customClass="DSFMutableLicenseKeyControlView">
+                        <rect key="frame" x="20" y="20" width="297" height="25"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="segmentCount">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="segmentSize">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="name" value="Primary License Key"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderCharacter" value="*"/>
+                        </userDefinedRuntimeAttributes>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="SWt-zg-S6Q" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="55t-qg-MMc"/>
+                    <constraint firstItem="1ad-cb-Pa8" firstAttribute="leading" secondItem="SWt-zg-S6Q" secondAttribute="leading" id="5SC-SG-zWA"/>
+                    <constraint firstItem="5HS-0B-DDw" firstAttribute="leading" secondItem="BZM-QG-xqy" secondAttribute="leading" id="86j-Qa-7qs"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="M7r-8M-gJR" secondAttribute="trailing" constant="20" symbolic="YES" id="GbR-xf-TTv"/>
+                    <constraint firstItem="5HS-0B-DDw" firstAttribute="top" secondItem="2cI-OY-1Le" secondAttribute="bottom" constant="28" id="MAT-2w-tVi"/>
+                    <constraint firstItem="M7r-8M-gJR" firstAttribute="top" secondItem="2cI-OY-1Le" secondAttribute="top" id="MeD-3e-vM8"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SWt-zg-S6Q" secondAttribute="trailing" constant="20" symbolic="YES" id="P3K-pF-Ool"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5HS-0B-DDw" secondAttribute="bottom" constant="20" id="YAd-kj-yNv"/>
+                    <constraint firstItem="1ad-cb-Pa8" firstAttribute="top" secondItem="SWt-zg-S6Q" secondAttribute="bottom" constant="19" id="aLp-j4-ZMw"/>
+                    <constraint firstItem="SWt-zg-S6Q" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="emv-pA-rvV"/>
+                    <constraint firstItem="2cI-OY-1Le" firstAttribute="top" secondItem="1ad-cb-Pa8" secondAttribute="bottom" constant="19" id="thY-ye-xjV"/>
+                    <constraint firstItem="2cI-OY-1Le" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="ueO-bp-UqT"/>
+                    <constraint firstItem="M7r-8M-gJR" firstAttribute="leading" secondItem="2cI-OY-1Le" secondAttribute="trailing" constant="8" symbolic="YES" id="zVD-Fh-uCA"/>
+                </constraints>
             </view>
+            <point key="canvasLocation" x="-125.5" y="-74.5"/>
         </window>
     </objects>
 </document>
