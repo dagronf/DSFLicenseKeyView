@@ -9,18 +9,18 @@
 * Number of license segments
 * Number of characters in a segment
 * Placeholder character
-* Highlighting if the licence key is invalid
+* (Optional) Highlighting if the licence key is invalid
 
-### In Code
+## Usage
 
-#### Read-only
+### Read-only
 
 	[DSFLicenseKeyControlView createWithName:@"Eight by Three License Key"
 								segmentCount:3
 	   							 segmentSize:8
 										 key:@"ABCDEFGH-IJKLMNOP-QRSTUVWX"];
 
-#### Mutable (editable)
+### Mutable (editable)
 
 	[DSFMutableLicenseKeyControlView createMutableWithName:@"Four by Six License Key"
 											  segmentCount:4

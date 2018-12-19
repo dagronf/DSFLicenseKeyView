@@ -22,6 +22,11 @@
 		23C62EA121CA074100B2E3B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C62EA021CA074100B2E3B1 /* main.m */; };
 		23C62EA721CA077D00B2E3B1 /* DSFLicenseKeyView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 230DCDCB21C71313006E4469 /* DSFLicenseKeyView.framework */; };
 		23C62EA921CA079100B2E3B1 /* DSFLicenseKeyView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 230DCDCB21C71313006E4469 /* DSFLicenseKeyView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		23C62EB421CA092E00B2E3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C62EB321CA092E00B2E3B1 /* AppDelegate.swift */; };
+		23C62EB621CA092F00B2E3B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23C62EB521CA092F00B2E3B1 /* Assets.xcassets */; };
+		23C62EB921CA092F00B2E3B1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23C62EB721CA092F00B2E3B1 /* MainMenu.xib */; };
+		23C62EBF21CA093900B2E3B1 /* DSFLicenseKeyView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 230DCDCB21C71313006E4469 /* DSFLicenseKeyView.framework */; };
+		23C62EC121CA094B00B2E3B1 /* DSFLicenseKeyView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 230DCDCB21C71313006E4469 /* DSFLicenseKeyView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +37,16 @@
 			dstSubfolderSpec = 10;
 			files = (
 				23C62EA921CA079100B2E3B1 /* DSFLicenseKeyView.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23C62EC021CA094200B2E3B1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				23C62EC121CA094B00B2E3B1 /* DSFLicenseKeyView.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +75,12 @@
 		23C62EAA21CA083900B2E3B1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		23C62EAB21CA083900B2E3B1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		23C62EAC21CA08A400B2E3B1 /* art */ = {isa = PBXFileReference; lastKnownFileType = folder; path = art; sourceTree = "<group>"; };
+		23C62EB121CA092E00B2E3B1 /* DSFLicenseKeyDemoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSFLicenseKeyDemoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		23C62EB321CA092E00B2E3B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		23C62EB521CA092F00B2E3B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		23C62EB821CA092F00B2E3B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		23C62EBA21CA092F00B2E3B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23C62EBB21CA092F00B2E3B1 /* DSFLicenseKeyDemoSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DSFLicenseKeyDemoSwift.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +99,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		23C62EAE21CA092E00B2E3B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23C62EBF21CA093900B2E3B1 /* DSFLicenseKeyView.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -89,6 +118,7 @@
 				23C62EAC21CA08A400B2E3B1 /* art */,
 				230DCDCD21C71313006E4469 /* DSFLicenseKeyView */,
 				23C62E9621CA074000B2E3B1 /* DSFLicenseFieldDemo */,
+				23C62EB221CA092E00B2E3B1 /* DSFLicenseKeyDemoSwift */,
 				230DCDCC21C71313006E4469 /* Products */,
 				23C62EA621CA077D00B2E3B1 /* Frameworks */,
 			);
@@ -99,6 +129,7 @@
 			children = (
 				230DCDCB21C71313006E4469 /* DSFLicenseKeyView.framework */,
 				23C62E9521CA074000B2E3B1 /* DSFLicenseFieldDemo.app */,
+				23C62EB121CA092E00B2E3B1 /* DSFLicenseKeyDemoSwift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,6 +178,18 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23C62EB221CA092E00B2E3B1 /* DSFLicenseKeyDemoSwift */ = {
+			isa = PBXGroup;
+			children = (
+				23C62EB321CA092E00B2E3B1 /* AppDelegate.swift */,
+				23C62EB521CA092F00B2E3B1 /* Assets.xcassets */,
+				23C62EB721CA092F00B2E3B1 /* MainMenu.xib */,
+				23C62EBA21CA092F00B2E3B1 /* Info.plist */,
+				23C62EBB21CA092F00B2E3B1 /* DSFLicenseKeyDemoSwift.entitlements */,
+			);
+			path = DSFLicenseKeyDemoSwift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,12 +246,31 @@
 			productReference = 23C62E9521CA074000B2E3B1 /* DSFLicenseFieldDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		23C62EB021CA092E00B2E3B1 /* DSFLicenseKeyDemoSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23C62EBC21CA092F00B2E3B1 /* Build configuration list for PBXNativeTarget "DSFLicenseKeyDemoSwift" */;
+			buildPhases = (
+				23C62EAD21CA092E00B2E3B1 /* Sources */,
+				23C62EAE21CA092E00B2E3B1 /* Frameworks */,
+				23C62EAF21CA092E00B2E3B1 /* Resources */,
+				23C62EC021CA094200B2E3B1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DSFLicenseKeyDemoSwift;
+			productName = DSFLicenseKeyDemoSwift;
+			productReference = 23C62EB121CA092E00B2E3B1 /* DSFLicenseKeyDemoSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		230DCDC221C71313006E4469 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Darren Ford";
 				TargetAttributes = {
@@ -216,6 +278,9 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					23C62E9421CA074000B2E3B1 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					23C62EB021CA092E00B2E3B1 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -235,6 +300,7 @@
 			targets = (
 				230DCDCA21C71313006E4469 /* DSFLicenseKeyView */,
 				23C62E9421CA074000B2E3B1 /* DSFLicenseFieldDemo */,
+				23C62EB021CA092E00B2E3B1 /* DSFLicenseKeyDemoSwift */,
 			);
 		};
 /* End PBXProject section */
@@ -253,6 +319,15 @@
 			files = (
 				23C62E9B21CA074100B2E3B1 /* Assets.xcassets in Resources */,
 				23C62E9E21CA074100B2E3B1 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23C62EAF21CA092E00B2E3B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23C62EB621CA092F00B2E3B1 /* Assets.xcassets in Resources */,
+				23C62EB921CA092F00B2E3B1 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +354,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		23C62EAD21CA092E00B2E3B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23C62EB421CA092E00B2E3B1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -286,6 +369,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				23C62E9D21CA074100B2E3B1 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		23C62EB721CA092F00B2E3B1 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23C62EB821CA092F00B2E3B1 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -429,6 +520,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darrenford.DSFLicenseKeyView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -454,6 +546,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darrenford.DSFLicenseKeyView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -496,6 +589,48 @@
 			};
 			name = Release;
 		};
+		23C62EBD21CA092F00B2E3B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DSFLicenseKeyDemoSwift/DSFLicenseKeyDemoSwift.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3L6RK3LGGW;
+				INFOPLIST_FILE = DSFLicenseKeyDemoSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.darrenford.DSFLicenseKeyDemoSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		23C62EBE21CA092F00B2E3B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DSFLicenseKeyDemoSwift/DSFLicenseKeyDemoSwift.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3L6RK3LGGW;
+				INFOPLIST_FILE = DSFLicenseKeyDemoSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.darrenford.DSFLicenseKeyDemoSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -522,6 +657,15 @@
 			buildConfigurations = (
 				23C62EA321CA074100B2E3B1 /* Debug */,
 				23C62EA421CA074100B2E3B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23C62EBC21CA092F00B2E3B1 /* Build configuration list for PBXNativeTarget "DSFLicenseKeyDemoSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23C62EBD21CA092F00B2E3B1 /* Debug */,
+				23C62EBE21CA092F00B2E3B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
