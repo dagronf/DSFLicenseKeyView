@@ -2,7 +2,7 @@
 
 ![](./art/simple.png)
 
-![](./art/preview.mp4)
+![](./art/preview.gif)
 
 ### Configurable in IB and via code
 
@@ -15,17 +15,35 @@
 
 ### Read-only
 
-	[DSFLicenseKeyControlView createWithName:@"Eight by Three License Key"
-								segmentCount:3
-	   							 segmentSize:8
-										 key:@"ABCDEFGH-IJKLMNOP-QRSTUVWX"];
+#### Objective-C
+
+    [DSFLicenseKeyControlView createWithName:@"Eight by Three License Key"
+                                segmentCount:3
+                                 segmentSize:8
+                                         key:@"ABCDEFGH-IJKLMNOP-QRSTUVWX"];
+
+#### Swift
+
+    DSFLicenseKeyControlView.create(withName: "Eight by Three License Key",
+                                    segmentCount: 3,
+                                    segmentSize: 8,
+                                    key: "ABCDEFGH-IJKLMNOP-QRSTUVWX")
 
 ### Mutable (editable)
 
-	[DSFMutableLicenseKeyControlView createMutableWithName:@"Four by Six License Key"
-											  segmentCount:4
-											   segmentSize:6
-													   key:@"123456-ABCDEF-CATDOG-NOODLE"];
+#### Objective-C
+
+    [DSFMutableLicenseKeyControlView createMutableWithName:@"Four by Six License Key"
+                                              segmentCount:4
+                                               segmentSize:6
+                                                       key:@"123456-ABCDEF-CATDOG-NOODLE"];
+
+#### Swift
+
+     DSFMutableLicenseKeyControlView.createMutable(withName: "Four by Six License Key",
+                                                   segmentCount: 4,
+                                                   segmentSize: 6,
+                                                   key: "123456-ABCDEF-CATDOG-NOODLE")
 
 ### Integration with Interface Builder
 
