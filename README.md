@@ -1,8 +1,8 @@
 # macOS Cocoa License Key Control
 
-![](./art/simple.png)
+![Simple License Key](https://raw.githubusercontent.com/dagronf/dagronf.github.io/master/art/projects/DSFLicenceField/simple.png)
 
-![](./art/preview.gif)
+![Simple License Key in action](https://raw.githubusercontent.com/dagronf/dagronf.github.io/master/art/projects/DSFLicenceField/preview.gif)
 
 ### Configurable in IB and via code
 
@@ -52,26 +52,26 @@ These provide interface builder inspectables, so that you can :-
 1. Configure your license key field within IB
 2. Preview your license key directly in your view
 
-![](./art/interface_builder.png)
+![License Key preview in Interface Builder](https://raw.githubusercontent.com/dagronf/dagronf.github.io/master/art/projects/DSFLicenceField/interface_builder.png)
 
 ### Preview your license key
 
 Use Interface Builder to build your views live
 
-![](./art/interface_builder_preview.png)
+![License Key preview in Interface Builder in action](https://raw.githubusercontent.com/dagronf/dagronf.github.io/master/art/projects/DSFLicenceField/interface_builder_preview.png)
 
 ## Keyboard navigation
 
 * Tab between the fields in your license key
 * When a field is filled, moves automatically to the next field
 
-![](./art/keyboard_navigation.gif)
+![Keyboard navigation](https://raw.githubusercontent.com/dagronf/dagronf.github.io/master/art/projects/DSFLicenceField/keyboard_navigation.gif)
 
 ## Paste support
 
 You can copy and paste your license key into a field, and if the copied key matches the settings, will properly fill the fields
 
-![](./art/paste_support.gif)
+![Copy and paste support](https://raw.githubusercontent.com/dagronf/dagronf.github.io/master/art/projects/DSFLicenceField/paste_support.gif)
 
 ## Voiceover support
 
